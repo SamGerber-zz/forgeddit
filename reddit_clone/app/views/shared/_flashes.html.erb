@@ -1,0 +1,10 @@
+<table>
+  <% flash.each do |category, messages| %>
+    <tr><strong><%= category.capitalize %></strong></tr>
+    <% messages.each do |message| %>
+      <tr>
+        <td><%= message %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
