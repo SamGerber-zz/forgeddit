@@ -1,0 +1,18 @@
+<form action="<%= action_path %>" method="post">
+  <input type="hidden" name="_method" value="<%= http_method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <br/>
+  <label>
+    Title:
+    <br/>
+    <input type="text" name="sub[title]" value="<%= sub.title %>" id="Title">
+  </label>
+  <br/>
+  <label>
+    Description:
+    <br/>
+    <input type="text" name="sub[description]" value="<%= sub.description %>" id="Description">
+  </label>
+  <br/>
+  <input type="submit" value="<%= button_text %>">
+</form>
