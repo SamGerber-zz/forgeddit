@@ -1,0 +1,11 @@
+<h1>Update Account!</h1>
+<br/>
+<% form_options = {
+    user: @user,
+    action_path: user_url(@user),
+    http_method: "PATCH",
+    button_text: "Save Changes!"
+  } %>
+<%= render "shared/user_form", form_options %>
+<%= button_to "Deregister", user_url(@user), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Cancel", user_url(@user), method: :get %>
