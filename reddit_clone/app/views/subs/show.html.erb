@@ -1,0 +1,11 @@
+<h1> Sub: <%= @sub.title %> </h1>
+Created by <%= @sub.moderator.username %> on <%= @sub.created_at.to_date %>
+<br/>
+<% if current_user == @sub.moderator %>
+<table>
+  <tr>
+    <td><%= button_to "Edit Sub", edit_sub_url(@sub), method: :get %></td>
+    <td><%= button_to "Delete Sub", sub_url(@sub), method: :delete %></td>
+  </tr>
+</table>
+<% end %>
