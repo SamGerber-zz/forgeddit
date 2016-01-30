@@ -1,0 +1,10 @@
+<table>
+  <% subs.order(:id).each do |sub| %>
+    <tr>
+      <td><%= sub.id %></td>
+      <td><%= link_to sub.title, sub_url(sub), method: :get %></td>
+      <td><%= sub.created_at.to_date %></td>
+      <td><%= link_to sub.moderator.username, user_url(sub.moderator), method: :get %></td>
+    </tr>
+  <% end %>
+</table>
