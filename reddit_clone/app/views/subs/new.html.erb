@@ -1,0 +1,9 @@
+<h1>Create New Sub!</h1>
+<br/>
+<% form_options = {
+    sub: @sub,
+    action_path: subs_url,
+    http_method: "POST",
+    button_text: "Create New Sub!"
+  } %>
+<%= render "shared/sub_form", form_options %>
