@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many :moderated_subs,
+    class_name: "Sub",
+    foreign_key: :moderator_id
+
   def password=(password)
     @password = String(password)
     self.password_digest = BCrypt::Password.create(@password).to_s
