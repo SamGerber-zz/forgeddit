@@ -1,0 +1,11 @@
+<h1>Edit Sub!</h1>
+<br/>
+<% form_options = {
+    sub: @sub,
+    action_path: sub_url(@sub),
+    http_method: "PATCH",
+    button_text: "Save Changes!"
+  } %>
+<%= render "shared/sub_form", form_options %>
+<%= button_to "Delete Sub", sub_url(@sub), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Cancel", sub_url(@sub), method: :get %>
