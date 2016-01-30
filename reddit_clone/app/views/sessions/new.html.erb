@@ -1,0 +1,9 @@
+<h1>Sign In!</h1>
+<br/>
+<% form_options = {
+    user: @user,
+    action_path: session_url,
+    http_method: "POST",
+    button_text: "Sign In!"
+  } %>
+<%= render "shared/user_form", form_options %>
