@@ -1,0 +1,9 @@
+<h1>Sign Up!</h1>
+<br/>
+<% form_options = {
+    user: @user,
+    action_path: users_url,
+    http_method: "POST",
+    button_text: "Sign Up!"
+  } %>
+<%= render "shared/user_form", form_options %>
