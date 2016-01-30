@@ -1,0 +1,9 @@
+<table>
+  <% @users.order(:id).each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= link_to user.username, user_url(user), method: :get %></td>
+      <td><%= user.created_at.to_date %></td>
+    </tr>
+  <% end %>
+</table>
