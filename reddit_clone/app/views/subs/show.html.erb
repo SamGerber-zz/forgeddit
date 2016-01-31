@@ -9,3 +9,8 @@ Created by <%= @sub.moderator.username %> on <%= @sub.created_at.to_date %>
   </tr>
 </table>
 <% end %>
+<h3>Posts:</h3>
+<%= link_to "Create a new post!", new_post_url, method: :get %>
+
+<br/>
+<%= render "shared/posts_table", posts: @sub.posts %>
