@@ -1,0 +1,31 @@
+<h1> Post: <%= @post.title %> </h1>
+Created by <%= link_to @post.author.username, user_url(@post.author), method: :get %> on <%= @post.created_at.to_date %>
+<br/>
+
+<table>
+    <tr>
+      <td><%= @post.id %></td>
+      <td><%= @post.title %></td>
+      <td><%= @post.created_at.to_date %></td>
+      <td><%= link_to @post.author.username, user_url(@post.author), method: :get %></td>
+    </tr>
+    <tr>
+      <td>---</td>
+      <td><%= link_to @post.url, @post.url, method: :get %></td>
+      <td><%= @post.content %></td>
+      <td></td>
+    </tr>
+</table>
+Posted on:
+<% @post.subs.each do |sub| %>
+  <%= link_to sub.title, sub_url(sub), method: :get %>
+<% end %>
+
+<% if (@post.moderators + [@post.author]).include? current_user %>
+<table>
+  <tr>
+    <td><%= button_to "Edit Post", edit_post_url(@post), method: :get %></td>
+    <td><%= button_to "Delete Post", post_url(@post), method: :delete %></td>
+  </tr>
+</table>
+<% end %>
