@@ -17,4 +17,14 @@ class Sub < ActiveRecord::Base
   belongs_to :moderator,
     class_name: "User",
     foreign_key: :moderator_id
+
+    has_many :postings,
+      class_name: "PostSub",
+      foreign_key: :sub_id,
+      dependent: :destroy,
+      inverse_of: :sub
+
+    has_many :posts,
+      through: :postings,
+      source: :post
 end
