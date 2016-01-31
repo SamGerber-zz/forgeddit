@@ -1,5 +1,11 @@
 <h1> <%= @user.username %> </h1>
 Member since: <%= @user.created_at.to_date %>
-<br>
+<br/>
+<br/>
 <h4>Moderated Subs:</h4>
 <%= render "shared/subs_table", subs: @user.moderated_subs %>
+<br/>
+<br/>
+<h4>Authored Posts:</h4>
+<br/>
+<%= render "shared/posts_table", posts: @user.posts %>
