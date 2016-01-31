@@ -1,0 +1,16 @@
+<table>
+  <% posts.order(:updated_at).each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= link_to post.title, post_url(post), method: :get %></td>
+      <td><%= post.created_at.to_date %></td>
+      <td><%= link_to post.author.username, user_url(post.author), method: :get %></td>
+    </tr>
+    <tr>
+      <td>---</td>
+      <td><%= link_to post.url, post.url, method: :get %></td>
+      <td><%= post.content %></td>
+      <td><%#=  %></td>
+    </tr>
+  <% end %>
+</table>
