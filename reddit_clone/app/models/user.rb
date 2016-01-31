@@ -30,7 +30,13 @@ class User < ActiveRecord::Base
 
   has_many :moderated_subs,
     class_name: "Sub",
-    foreign_key: :moderator_id
+    foreign_key: :moderator_id,
+    dependent: :destroy
+
+  has_many :posts,
+    class_name: "Post",
+    foreign_key: :author_id,
+    dependent: :destroy
 
   def password=(password)
     @password = String(password)
