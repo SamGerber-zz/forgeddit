@@ -1,0 +1,11 @@
+<h1>Edit Post!</h1>
+<br/>
+<% form_options = {
+    post: @post,
+    action_path: post_url(@post),
+    http_method: "PATCH",
+    button_text: "Save Changes!"
+  } %>
+<%= render "shared/post_form", form_options %>
+<%= button_to "Delete Post", post_url(@post), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Cancel", post_url(@post), method: :get %>
