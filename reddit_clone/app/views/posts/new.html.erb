@@ -1,0 +1,9 @@
+<h1>Create New Post!</h1>
+<br/>
+<% form_options = {
+    post: @post,
+    action_path: posts_url,
+    http_method: "POST",
+    button_text: "Create New Post!"
+  } %>
+<%= render "shared/post_form", form_options %>
